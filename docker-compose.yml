@@ -1,0 +1,12 @@
+services:
+  subledger:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: sqlite:////app/data/subledger.db
+    volumes:
+      - subledger_data:/app/data
+
+volumes:
+  subledger_data:
